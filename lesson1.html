@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson1</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        body{
+            height: auto;
+        }
+
+    </style>
+</head>
+<body>
+    <h1 class="text-center bg-dark  text-white p-3">print star pattern in JavaScript </h1>
+        <div class="container-fluid text-center my_buttons center-block">
+            <button type="button" class="  sm-d-block btn btn-primary p-3 pl-5 pr-5  ">print star </button>
+            <button type="button" class=" sm-d-block  btn btn-success  p-3 pl-5 pr-5 ">print more star </button>
+            <div id="first_div" data-value="3333" class="text-center"></div>
+        </div>
+    <script>
+    var first_div=document.getElementById('first_div');
+    var add_item=document.querySelectorAll("button")[0];
+    var more_item=document.querySelectorAll("button")[1];
+
+  for(var i=0; i<=10;   i++ ){
+        first_div.innerHTML+="*".repeat(i)+"<br>";
+    }
+    add_item.addEventListener('click',()=>{
+        for(var i=12; i<=20; i++){
+            first_div.innerHTML+="*".repeat(i)+"<br>";
+        }
+        add_item.style.visibility='hidden';
+        more_item.style.visibility='visible';
+    });
+    more_item.addEventListener('click',()=>{
+        for(var i=20; i>=12; i--){
+            first_div.innerHTML+="*".repeat(i)+"<br>";
+        }
+        more_item.style.visibility='hidden';
+        add_item.style.visibility='visible';
+    });
+    </script>
+</body>
+</html>
