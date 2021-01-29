@@ -58,11 +58,64 @@
            }
            first_div.innerHTML+=i+"<br>";
        }
+    var languages = ["HTML", "CSS", "JS","PHP","MySQL"];
+    for (var i=0; i<=languages.length-1; i++){
+            first_div.innerHTML+=languages[i]+"<br>";
+        }
+     var languages = ["HTML", "CSS", "JS","PHP","MySQL"];
+     for (var i in languages){
+                first_div.innerHTML+="<li>"+languages[i]+"</li>";
+            }
         ___________________________________________________________________________________________
+   forEach
+       var languages = ["HTML", "CSS", "JS","PHP","MySQL"];
+        languages.forEach(items=>{
+            first_div.innerHTML+=items+"<br>";
+        })
         ___________________________________________________________________________________________
+ querySelector
+     var query=document.querySelector('#first_div');
+     var query=document.querySelectorAll('div');
+     var set_item=document.querySelectorAll("button")[0];
+     var tag_h1=document.getElementsByTagName('h1')[0];
+     var class_name=document.getElementsByClassName('span_1')[0];
+
+             var class_name=document.getElementsByClassName('btn');
+             for (var i=0; i<=class_name.length-1; ++i){
+                 class_name[i].innerText="Mohammad";
+             }
+
         ___________________________________________________________________________________________
+    addEventListener
+           window.addEventListener('mousemove', () => {
+                div_1.innerHTML='<h1>' + Math.random()+'</h1>';
+            });
+
         ___________________________________________________________________________________________
+localStorage
+    if (localStorage.getItem("name")==null){
+       var name=prompt("What is Your Name ? ");
+        set_item.addEventListener('click',()=>{
+            js=" <h1>Set JavaScript </h1>";
+            localStorage.setItem('js',js);
+            localStorage.setItem('name',name);
+        });
+    }else {
+        get_item.addEventListener('click',()=>{
+            localStorage.removeItem('js');
+            localStorage.removeItem('name');
+            var name=prompt("What is Your Name ? ")
+            js="<h1> Get JavaScript</h1>";
+            localStorage.setItem('js',js);
+            localStorage.setItem('name',name);
+        });
+    }
+    div_1.innerHTML=localStorage.getItem("js")+localStorage.getItem("name");
         ___________________________________________________________________________________________
+sessionStorage
+    sessionStorage.setItem("Mo",'Mohammad')
+    sessionStorage.getItem("Mo");
+    sessionStorage.removeItem("Mo")
         ___________________________________________________________________________________________
         ___________________________________________________________________________________________
         ___________________________________________________________________________________________

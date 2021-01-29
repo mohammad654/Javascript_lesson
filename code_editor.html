@@ -10,20 +10,17 @@
     <style>
         body{
             height: auto;
-            /*background-image: linear-gradient(to left, #313cff, #fbff80);*/
-            background-color: yellow;
         }
-    #first_div{
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%,-50%);
+        nav a{
+            font-weight: bold;
+            font-size:40px !important;
         }
         nav img{
             max-width: 66px;
             max-height: 66px;
             border-radius: 50%;
             object-fit: scale-down;
+            cursor: pointer;
         }
         #my_text{
             min-height: 277px;
@@ -48,15 +45,16 @@
     </style>
 </head>
 <body>
-    <h1 class="text-center bg-dark  text-white p-3"> JavaScript </h1>
 
-    <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand" href="https://www.linkedin.com/in/mohammad-ali-shikhi-279132137/" target="_blank">Mohammad Ali</a>
-        <a class="navbar-brand" href="#"></a>
-        <img src="../img/my.jpg" class="d-inline-block align-top" alt="">
-    </nav>
 
-    <main class="text-center">
+<nav class="navbar navbar-light bg-light border border-primary  color-primary rounded ">
+    <a class="navbar-brand text-dark" href="https://www.linkedin.com/in/mohammad-ali-shikhi-279132137/" target="_blank">    <img src="../img/download.png" class="d-inline-block align-top disabled" alt=""></a>
+    <a class="navbar-brand text-primary nav-link disabled" href="#"></a>
+    <img src="../img/download%20(1).png" class="d-inline-block align-top disabled" alt="" title="change background Color ">
+    <img src="../img/my.jpg" class="d-inline-block align-top " alt="" title="change background Color ">
+</nav>
+
+<main class="text-center">
         <textarea id="my_text" class="rounded border border-primary ">
         <html>
         <head>
@@ -69,26 +67,26 @@
         </html>
 
         </textarea>
-    </main>
+</main>
 
-    <div class="container-fluid text-center  center-block my_button">
-        <button type="button" class=" sm-d-block  btn btn-success  p-3 pl-5 pr-5 ">Run </button>
-        <button type="button" class="  sm-d-block btn btn-danger p-3 pl-5 pr-5  ">Delete </button>
-    </div>
+<div class="container-fluid text-center  center-block my_button">
+    <button type="button" class=" sm-d-block  btn btn-success  p-3 pl-5 pr-5 ">Run </button>
+    <button type="button" class="  sm-d-block btn btn-danger p-3 pl-5 pr-5  ">Delete </button>
+</div>
 
-    <div class="container-fluid text-center ">
-        <div  id="my_div"  class="text-center border-primary ">Result</div>
-        <div id="result"  class="text-center "></div>
+<div class="container-fluid text-center ">
+    <div  id="my_div"  class="text-center border-primary ">Result</div>
+    <div id="result"  class="text-center "></div>
 
-    </div>
-    </div>
-    <script>
-    var tag_h1=document.getElementsByTagName('a')[1];
+</div>
+</div>
+<script>
+    var tag_a=document.getElementsByTagName('a')[1];
     var myVar = setInterval(myTimer, 1000);
     function myTimer() {
         var d = new Date();
         var t = d.toLocaleTimeString();
-        tag_h1.innerHTML =t;
+        tag_a.innerHTML =t ;
     }
 
     //____________________________________________________________________
@@ -97,6 +95,11 @@
     var result=document.getElementById('result');
     var Run=document.querySelectorAll("button")[0];
     var Delete=document.querySelectorAll("button")[1];
+    var img_0=document.querySelectorAll("img")[0];
+    var img_1=document.querySelectorAll("img")[1];
+    var my_div=document.getElementById('my_div');
+    var tag_a2=document.getElementsByTagName('a')[2];
+
 
 
     onload=()=>{
@@ -112,19 +115,16 @@
         result.innerHTML="";
         localStorage.removeItem('my_text')
     }
-
-
-  //   button_0.addEventListener('click',()=> {
-  //       sessionStorage.setItem("Mo",'Mohammad')
-  //       first_div.innerHTML=   sessionStorage.getItem("Mo");
-  //
-  // });
-  //
-  //   button_1.addEventListener('click',()=>{
-  //       first_div.innerHTML='removeItem'+'<br>';
-  //       sessionStorage.removeItem("Mo")
-  //   });
-
-    </script>
+    img_0.onclick=()=>{
+  document.body.style.backgroundColor='#282C34';
+        result.style.color='White ';
+        my_div.style.color='White ';
+    }
+    img_1.onclick=()=>{
+        document.body.style.backgroundColor='White';
+        result.style.color='#282C34 ';
+        my_div.style.color=' #282C34 ';
+    }
+</script>
 </body>
 </html>
