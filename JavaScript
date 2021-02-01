@@ -93,6 +93,10 @@
 
         ___________________________________________________________________________________________
 localStorage
+     localStorage.setItem('js',js);
+     localStorage.getItem("js")
+     localStorage.removeItem('js');
+
     if (localStorage.getItem("name")==null){
        var name=prompt("What is Your Name ? ");
         set_item.addEventListener('click',()=>{
@@ -117,6 +121,25 @@ sessionStorage
     sessionStorage.getItem("Mo");
     sessionStorage.removeItem("Mo")
         ___________________________________________________________________________________________
+protocol
+    location.protocol : to know type
+     location.href :URL
+     location.pathname : Path
+     location.hostname : to know domain name
+Location
+       location.reload(); refresh the page
+      location.assign() : go to new page  and go back
+      location.replace(): go to new page
+document
+      document.URL
+      document.domain
+      document.title;
+      document.body
+      document.head
+      document.images.length
+      document.links.length
+      document.forms.length
+      document.images[0].src='../img/download%20(1).png';
         ___________________________________________________________________________________________
         ___________________________________________________________________________________________
         ___________________________________________________________________________________________

@@ -16,11 +16,16 @@
             font-size:40px !important;
         }
         nav img{
-            max-width: 66px;
-            max-height: 66px;
+            max-width: 70px;
+            max-height: 70px;
             border-radius: 50%;
             object-fit: scale-down;
             cursor: pointer;
+            transition: border 2s;
+        }
+        nav img:hover {
+            border: solid 1px #0000FF !important;
+
         }
         #my_text{
             min-height: 277px;
@@ -37,24 +42,27 @@
             padding: 10px;
             border-bottom: 2px solid ;
             font-weight: bold;
+            font-size: 30px;
         }
         #result{
             max-width: 100% !important;
-        }
 
+        }
+        nav .time{  font-family: "Sacramento", cursive;
+        }
     </style>
 </head>
 <body>
 
 
 <nav class="navbar navbar-light bg-light border border-primary  color-primary rounded ">
-    <a class="navbar-brand text-dark" href="https://www.linkedin.com/in/mohammad-ali-shikhi-279132137/" target="_blank">    <img src="linkedin.png" class="d-inline-block align-top disabled" alt=""></a>
-    <a class="navbar-brand text-primary nav-link disabled" href="#"></a>
-    <img src="dark.png" class="d-inline-block align-top disabled" alt="" title="change background Color ">
-    <img src="my.jpg" class="d-inline-block align-top " alt="" title="change background Color ">
+    <a class="navbar-brand text-dark" href="https://www.linkedin.com/in/mohammad-ali-shikhi-279132137/" target="_blank"><img src="my.jpg" class="d-inline-block align-top disabled" alt=""></a>
+    <a class="navbar-brand text-primary nav-link disabled time" href="#"></a>
+    <img src="dark.png" class="d-inline-block align-top disabled border border-5 " alt="" title="change background Color ">
+    <img src="white-background.jpg " class="d-inline-block align-top border border-5" alt="" width="70" height="70" title="change background Color ">
 </nav>
 
-<main class="text-center">
+<main class="text-center ">
         <textarea id="my_text" class="rounded border border-primary ">
         <html>
         <head>
@@ -99,30 +107,35 @@
     var my_div=document.getElementById('my_div');
     var tag_a2=document.getElementsByTagName('a')[2];
 
-
+    localStorage.setItem('my_text',my_text.value);
 
     onload=()=>{
-        localStorage.setItem('my_text',my_text.value);
+
         my_text.value=localStorage.getItem('my_text');
         result.innerHTML=my_text.value;
+        document.body.style.backgroundColor=localStorage.getItem('backgroundColor');
+        result.style.color= localStorage.getItem('color');
+        my_div.style.color= localStorage.getItem('color');;
     }
     Run.onclick=()=>{
         result.innerHTML=my_text.value;
         localStorage.setItem('my_text',my_text.value);
+
     }
     Delete.onclick=()=>{
         result.innerHTML="";
         localStorage.removeItem('my_text')
     }
+
     img_1.onclick=()=>{
-  document.body.style.backgroundColor='#282C34';
-        result.style.color='White ';
-        my_div.style.color='White ';
+        localStorage.setItem('color','White');
+        localStorage.setItem('backgroundColor','#282C34');
+        location.reload();
     }
     img_2.onclick=()=>{
-        document.body.style.backgroundColor='White';
-        result.style.color='#282C34 ';
-        my_div.style.color=' #282C34 ';
+        localStorage.setItem('color','#282C34');
+        localStorage.setItem('backgroundColor','White');
+        location.reload();
     }
 </script>
 </body>
